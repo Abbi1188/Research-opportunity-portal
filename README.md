@@ -2,7 +2,6 @@
 
 A web application where faculty members can post, view, update, and manage research opportunities in one place.
 
-**GitHub Repository:** https://github.com/username/research-opportunity-portal  <!-- replace with your link -->
 
 ## Project Structure
 
