@@ -1,0 +1,11 @@
+# Use this workspace to collaborate
+workspace:
+  id: 9e0334e2-ad52-4700-825d-935ddd12ca5e
+
+localResources:
+  collections:
+    - ../Research Opportunity Portal
+
+cloudResources:
+  collections:
+    ../postman/collections/Research Opportunity Portal Copy: 67b72e87-009e-45ed-bc92-36ba37de153f

@@ -1,0 +1,13 @@
+# Use this workspace to collaborate
+workspace:
+  id: ae189f85-99d2-4ed1-8269-31b7be400f01
+
+cloudResources:
+  collections:
+    ../postman/collections/Research Opportunity Portal: 007f7821-45f4-4da0-ae19-4e6662f26a74
+
+# All resources in the `postman/` folder are automatically registered in Local View.
+# Point to additional files outside the `postman/` folder to register them individually. Example:
+#localResources:
+#  collections:
+#    - ../tests/E2E Test Collection/

@@ -1,0 +1,10 @@
+$kind: http-request
+url: "{{baseUrl}}/api/opportunities"
+method: GET
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("Status is 200", function () { pm.response.to.have.status(200); });
+      pm.test("Returns a list", function () { const j = pm.response.json(); pm.expect(Array.isArray(j) || Array.isArray(j.data)).to.be.true; });
+    language: text/javascript
+order: 4000

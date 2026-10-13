@@ -1,0 +1,13 @@
+{
+  "name": "research-portal-backend",
+  "version": "1.0.0",
+  "description": "REST API for the University Research Opportunity Portal",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --env-file=.env server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mysql2": "^3.11.0"
+  }
+}

@@ -1,0 +1,24 @@
+$kind: http-request
+url: "{{baseUrl}}/opportunities/{{id1}}"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "title": "AI for Medical Imaging (Updated)",
+      "description": "Research on detecting diseases from medical scans.",
+      "research_area": "Artificial Intelligence",
+      "faculty_name": "Dr. Ayesha Khan",
+      "department": "Computer Science",
+      "required_skills": "Python, Machine Learning, Deep Learning",
+      "available_positions": 4,
+      "application_deadline": "2026-12-20",
+      "status": "Open"
+    }
+scripts:
+  - type: afterResponse
+    code: pm.test('Status is 200 OK', function () { pm.response.to.have.status(200); });
+    language: text/javascript
+order: 6000

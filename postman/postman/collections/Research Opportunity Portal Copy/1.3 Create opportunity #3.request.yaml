@@ -1,0 +1,28 @@
+$kind: http-request
+url: "{{baseUrl}}/api/opportunities"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "title": "NLP for Urdu Text",
+      "description": "Research on detecting diseases from scans.",
+      "research_area": "Natural Language Processing",
+      "faculty_name": "Dr. Ayesha Khan",
+      "department": "Computer Science",
+      "required_skills": "Python, Machine Learning",
+      "available_positions": 2,
+      "application_deadline": "2026-12-15",
+      "status": "Open"
+    }
+scripts:
+  - type: afterResponse
+    code: |
+      pm.test("Status is 201", function () { pm.response.to.have.status(201); });
+      const j = pm.response.json();
+      const id = j.id || j.insertId || (j.data && (j.data.id || j.data.insertId)) || (j.opportunity && j.opportunity.id);
+      pm.collectionVariables.set("id3", id);
+    language: text/javascript
+order: 3000

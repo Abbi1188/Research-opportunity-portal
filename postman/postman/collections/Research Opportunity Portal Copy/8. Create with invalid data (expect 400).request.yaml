@@ -1,0 +1,25 @@
+$kind: http-request
+url: "{{baseUrl}}/api/opportunities"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "title": "",
+      "description": "Research on detecting diseases from scans.",
+      "research_area": "Artificial Intelligence",
+      "faculty_name": "Dr. Ayesha Khan",
+      "department": "Computer Science",
+      "required_skills": "Python, Machine Learning",
+      "available_positions": -5,
+      "application_deadline": "2026-12-15",
+      "status": "Pending"
+    }
+scripts:
+  - type: afterResponse
+    code: |
+      pm.test("Status is 400", function () { pm.response.to.have.status(400); });
+    language: text/javascript
+order: 10000

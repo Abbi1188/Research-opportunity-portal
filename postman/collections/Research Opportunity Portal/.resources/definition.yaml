@@ -1,0 +1,7 @@
+$kind: collection
+description: Run the requests in order (top to bottom). Start the backend first.
+variables:
+  baseUrl: http://localhost:5000/api
+  id1: ""
+  id2: ""
+  id3: ""

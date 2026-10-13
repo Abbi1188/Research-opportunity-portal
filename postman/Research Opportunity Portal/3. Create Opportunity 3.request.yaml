@@ -1,0 +1,28 @@
+$kind: http-request
+url: "{{baseUrl}}/opportunities"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "title": "Social Media and Mental Wellbeing",
+      "description": "Survey based research on student social media habits.",
+      "research_area": "Psychology",
+      "faculty_name": "Dr. Sara Malik",
+      "department": "Social Sciences",
+      "required_skills": "Survey Design, Data Analysis",
+      "available_positions": 1,
+      "application_deadline": "2026-12-01",
+      "status": "Open"
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test('Status is 201 Created', function () { pm.response.to.have.status(201); });
+      var data = pm.response.json();
+      var rec = data.data || data;
+      pm.collectionVariables.set('id3', rec.id);
+    language: text/javascript
+order: 3000

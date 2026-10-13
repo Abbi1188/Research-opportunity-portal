@@ -1,0 +1,24 @@
+$kind: http-request
+url: "{{baseUrl}}/opportunities/{{id2}}"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: text
+  content: |-
+    {
+      "title": "Renewable Energy Storage",
+      "description": "Study of battery storage for solar power systems.",
+      "research_area": "Energy Systems",
+      "faculty_name": "Dr. Imran Ali",
+      "department": "Electrical Engineering",
+      "required_skills": "MATLAB, Circuit Design",
+      "available_positions": 3,
+      "application_deadline": "2026-11-30",
+      "status": "Closed"
+    }
+scripts:
+  - type: afterResponse
+    code: pm.test('Status is 200 OK', function () { pm.response.to.have.status(200); });
+    language: text/javascript
+order: 7000

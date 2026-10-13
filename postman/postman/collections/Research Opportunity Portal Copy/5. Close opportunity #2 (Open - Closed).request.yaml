@@ -1,0 +1,26 @@
+$kind: http-request
+name: "5. Close opportunity #2 (Open -> Closed)"
+url: "{{baseUrl}}/api/opportunities/{{id2}}"
+method: PUT
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "title": "Renewable Energy Storage",
+      "description": "Research on detecting diseases from scans.",
+      "research_area": "Energy Systems",
+      "faculty_name": "Dr. Ayesha Khan",
+      "department": "Electrical Engineering",
+      "required_skills": "Python, Machine Learning",
+      "available_positions": 2,
+      "application_deadline": "2026-12-15",
+      "status": "Closed"
+    }
+scripts:
+  - type: afterResponse
+    code: |
+      pm.test("Status is 200", function () { pm.response.to.have.status(200); });
+    language: text/javascript
+order: 7000

@@ -1,0 +1,7 @@
+$kind: collection
+description: Run in order with the Collection Runner. Backend must be running on port 5000.
+variables:
+  baseUrl: http://localhost:5000
+  id1: ""
+  id2: ""
+  id3: ""
